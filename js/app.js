@@ -20,18 +20,30 @@ var totalCorrect = 0;
 
 var answer;
 
+function validate_answers (answer)
+{
+  if('Y' === answer.substr(0,1).toUpperCase()){
+     return true;
+    
+  }
+ else
+ {return false;
+}
+}
+
 for(var i = 0; i < 5; i++){
   answer = prompt(questions[i], 'Y');
-  if('Y' === answer.substr(0,1).toUpperCase()){
-    totalCorrect++;
-    alert(rightAnswerMsg);
-  }
+  validate_answers(answer);
+  if (validate_answers(answer))
+    {
+      totalCorrect++;
+      alert(rightAnswerMsg);
+    } 
   else{
     alert(wrongAnswerMsg);
   }
 
 }
-
 
 var number = 0;
 var counter = 1;
